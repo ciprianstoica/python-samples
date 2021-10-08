@@ -14,8 +14,3 @@ while True:
 
 print(s, bin(m))
 
-
-
-
-
-
