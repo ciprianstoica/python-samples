@@ -27,8 +27,13 @@ class B:
 
 class C(A, B):
     pass
+    # def generic(self):
+    #     B.generic(self)
+
+    def getg(self):
+        return super(A, self).name
 
 
 c = C()
 c.generic()
-print(c.name)
+print(c.getg())

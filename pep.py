@@ -8,7 +8,7 @@ def getMaxNumber(my_param = 8, c = 9):
     if c<my_param :
         return 1
     else:
-        return 2
+       return 2
 
 def get_min_number():
       return 1

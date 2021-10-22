@@ -1,50 +1,22 @@
+s = [3, 6, 56, -4, 23, -12, 44]
+s2 = [(2, 5), 'ab', [-4, 0.7], {'q', 'y'}]
 
-l = ['a', 'b', 'c']
-t = ('d', 'e', 'f')
+for e in s:
+    print(e)
 
-for x in l:
-    print(x, end=' ')
+for e in s:
+    print(e)
 else:
-    print('Done')
+    print('Yes, there is else in Python..')
 
-for x in t:
-    print(x, end=' ')
-else:
-    print('Done')
+for i in range(len(s)):
+    print(i, s[i])
 
+for i in range(1, len(s), 2):
+    print(i, s[i])
 
-######################################
+for i, e in enumerate(s, start=0):
+    print(i, e)
 
-sum = 0
-for x in range(5, 11, 2):
-    sum += x
-    print(x)
-else:
-    print(sum)
-
-#######################################
-
-for x in range(20, 6, -2):
-    print(x)
-
-######################################
-
-for (x, y) in [(1,2), (3,4), (5,6)]:
+for x, y in s2:
     print(x, y)
-
-######################################
-
-s = {'a', 'b', 'c', 'a'}
-d = {'d':2, 'e':3, 'f':8, 'e':9}
-
-for x in s:
-    print(x, end=' ')
-else:
-    print('Done')
-
-for x in d:
-    print(x, d[x], end=' ')
-else:
-    print('Done')
-
-

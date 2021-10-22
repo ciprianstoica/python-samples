@@ -1,7 +1,7 @@
 try:
-    list = ['a', 'b']
-    print(list[1])
-    print(list[4])
+    l = ['a', 'b']
+    print(l[1])
+    print(l[4])
     print("Try block done")
 except IndexError as e:
     print("Exception caught!", type(e), e)

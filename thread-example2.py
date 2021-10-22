@@ -1,5 +1,6 @@
 import threading, time, random
 
+
 def action(a, b):
     current_thread = threading.currentThread()
     thread_name = current_thread.getName()
@@ -7,6 +8,7 @@ def action(a, b):
     time.sleep(random.randint(0, 15))
     5 / (int(b) - 3)
     print('Finished thread nr {} for: {}: '.format(b,thread_name))
+
 
 threads = []
 index = 0

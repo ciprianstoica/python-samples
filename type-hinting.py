@@ -3,9 +3,11 @@
 def func(s: str, i: int) -> str:
     return s * i
 
+
 # suggest that the param should be either int or str and the result either int or str
 def func2(a: int or str) -> int or str:
     return a * 2
+
 
 # Python 2.7 hinting style
 def func3(a):

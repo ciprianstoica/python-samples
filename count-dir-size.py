@@ -1,7 +1,8 @@
 import os
 
+# my_dir = '/opt/training-python/proiecte/training'
 my_dir = os.getcwd()
-my_dir = '/opt/training-python/proiecte/training'
+
 
 size = 0
 nr_files = 0

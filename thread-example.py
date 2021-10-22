@@ -9,6 +9,7 @@ def action(a, b):
     print('Finished thread for: ', thread_name)
     print(a * b)
 
+
 for arg in [(3, 5), (6, 8)]:
     t = threading.Thread(target=action, args=arg)
     t.start()

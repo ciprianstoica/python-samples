@@ -13,6 +13,7 @@ class MyAbsClass(ABC):
     def normal_method(self):
         return self.p * 2
 
+
 class MyClass(MyAbsClass):
 
     def abs_method(self):
@@ -20,6 +21,9 @@ class MyClass(MyAbsClass):
         return self.p ** 2
 
 
-#o1 = MyAbsClass(5)
 o2 = MyClass(3)
 print(o2.abs_method())
+
+# ERROR
+o1 = MyAbsClass(5)
+
