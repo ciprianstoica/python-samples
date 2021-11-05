@@ -1,40 +1,46 @@
 import pprint
 
-# model data structure
-stat = {
-    'nr_lines' : 0,
-    'nr_words' : 0,
-    'nr_unique_words' : 0,
-    'unique_words' : {'somnoroase', 'lebada'},
-    'word_frecquency' : {
-        'somonoroase' : 3,
-        'lebada' : 1
-        #...
-    }
-}
 
-stat = {}
+def my_sort(e):
+    return e[1]
 
-with open("day2/poezie.txt", 'r', encoding='utf-8') as my_file:
-    lines = my_file.readlines()
-    stat['nr_lines'] = len(lines)
 
-sum = 0 # suma totala a cuvintelor
-mul = set() # set cu toate cuvintele unice
-dictionar = {}
+nr_nonempty_lines = 0
+nr_words = 0
+dict_frecv = {}
 
-for line in lines:
-    word_list = line.split()
-    sum += len(word_list)
-    for word in word_list:
-        word = word.lower()
-        mul.add(word)
-        if word not in dictionar:
-            dictionar[word] = 1
-        else:
-            dictionar[word] += 1
+with open(r'poezie.txt', 'r', encoding='utf-8') as poezie:
+    for line in poezie:
+        # skip empty lines
+        if line.strip() == '':
+            continue
 
-stat['nr_words'] = sum
-stat['unique_words'] = sorted(mul)
-stat['word_frequency'] = dictionar
-pprint.pprint(stat)
+        nr_nonempty_lines += 1
+        words = line.split()
+        for c in words:
+            c = c.strip('*;?-„ .,\'"').lower()
+            # skip empty words
+            if c != '':
+                nr_words += 1
+                if c in dict_frecv:
+                    dict_frecv[c] += 1
+                else:
+                    dict_frecv[c] = 1
+
+
+print('Nr linii nenule: ', nr_nonempty_lines)
+print('Nr cuvinte: ', nr_words)
+print('Set cuvinte unice: ', sorted(list(dict_frecv.keys())))
+print('Frecvente cuvinte: ', dict_frecv)
+pprint.pprint(dict_frecv)
+
+list_frecv = []
+
+for k in dict_frecv:
+    list_frecv.append((k, dict_frecv[k]))
+
+print(list_frecv)
+print(sorted(list_frecv, key=my_sort, reverse=True))
+
+
+
