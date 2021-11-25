@@ -25,6 +25,7 @@ class Point:
 
 
 class Polyline:
+    """A polyline is a list of points"""
 
     def __init__(self, *args):
         for p in args:
